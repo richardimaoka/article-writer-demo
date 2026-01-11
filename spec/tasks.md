@@ -13,20 +13,23 @@ This file tracks the development tasks for the rich text editor application.
 
 ## Phase 2: Database and Backend Logic
 
-- [ ] Finalize the `schema.prisma` file based on the architecture.
+- [ ] Create the `schema.prisma` file based on the architecture.
 - [ ] Run the initial database migration to create the `Article` table in PostgreSQL.
-- [ ] Implement the React Server Action for creating a new article (`createArticle`).
-- [ ] Implement the React Server Action for updating an existing article (`updateArticle`).
+- [ ] Implement the server-side logic for creating a new article (`createArticle`).
+- [ ] Implement the server-side logic for updating an existing article (`updateArticle`).
 - [ ] Implement the server-side logic to query a single article by its ID.
 - [ ] Implement the server-side logic to query all articles for a list view.
 
 ## Phase 3: Core UI Components
 
+- [ ] Create app/page.tsx to check the behavior of following components
 - [ ] Create a basic site layout component (e.g., `Header`, main content area).
 - [ ] Build the `Editor.tsx` component:
     - [ ] Integrate the TipTap editor.
     - [ ] Add an input field for the article `title`.
     - [ ] Add a basic toolbar for text formatting (e.g., bold, italic, headings).
+    - [ ] Add a React Server Action (`createArticle`) calling the corresponding server-side logic
+    - [ ] Add a React Server Action (`updateArticle`) calling the corresponding server-side logic
     - [ ] Add a "Save" button.
 - [ ] Build the `Viewer.tsx` component:
     - [ ] Implement the logic to render TipTap's JSON content as read-only content.
