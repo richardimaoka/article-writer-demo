@@ -4,8 +4,10 @@ This file tracks the development tasks for the rich text editor application.
 
 ## Phase 1: Project Setup & Configuration
 
-- [ ] Initialize a new Next.js project with TypeScript.
-- [ ] Set up ESLint and Prettier for code consistency.
+- [x] Initialize a new Next.js project with TypeScript.
+  - `pnpm create next-app`
+- [x] Set up ESLint and Prettier for code consistency.
+  - `pnpm create next-app` also completed this.
 - [ ] Initialize Prisma.
 - [ ] Set up Shadcn/UI.
 - [ ] Install all necessary dependencies (`@tiptap/react`, `@tiptap/starter-kit`, etc.).
