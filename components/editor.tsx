@@ -71,7 +71,8 @@ export default function MyEditor({}: EditorProps) {
     if (editor) {
       const content = editor.getJSON();
       // TODO: Call the onSave prop with the title and content
-      console.log({ title, content });
+      console.log("title:", title);
+      console.log(JSON.stringify(content, null, 2));
       alert("Article saved! (Check console for output)");
     }
   };
