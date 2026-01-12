@@ -13,3 +13,11 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Article {
+  id        String   @id @default(cuid())
+  title     String // A title for the article, for lists and metadata
+  content   Json // To store the TipTap JSON output
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

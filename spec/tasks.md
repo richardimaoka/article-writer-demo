@@ -9,11 +9,13 @@ This file tracks the development tasks for the rich text editor application.
 - [x] Set up ESLint and Prettier for code consistency.
   - `pnpm create next-app` also completed this.
 - [ ] Initialize Prisma. 
-  - [ ] Install NPM dependencies
-  - [ ] Set up the first Prisma schema for the generator and the datasource
-  - [ ] .env file to store the DB password and the connection URL
-  - [ ] Set up the postgres Docker container and its start-up script
-  - [ ] Update the Schema to have the first model
+  - [x] Install NPM dependencies
+  - [x] Set up the first Prisma schema for the generator and the datasource
+  - [x] .env file to store the DB password and the connection URL
+  - [x] Set up the postgres Docker container and its start-up script
+  - [x] Update the Schema to have the first model
+  - [x] `pnpm prisma migrate dev`
+  - [x] `pnpm prisma generate`
   - [ ] Seed the very first data to the model
 - [ ] Set up Shadcn/UI.
 - [ ] Install all necessary dependencies (`@tiptap/react`, `@tiptap/starter-kit`, etc.).
