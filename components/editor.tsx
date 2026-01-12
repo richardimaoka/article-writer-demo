@@ -7,6 +7,8 @@ import { Editor, EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
 
+import { useRouter } from "next/navigation";
+
 const Toolbar = ({ editor }: { editor: Editor }) => {
   if (!editor) {
     return null;
@@ -54,6 +56,7 @@ interface EditorProps {
 }
 
 export default function MyEditor({}: EditorProps) {
+  const router = useRouter();
   const [title, setTitle] = React.useState("");
   const [isSaving, setIsSaving] = React.useState(false);
 
@@ -75,8 +78,13 @@ export default function MyEditor({}: EditorProps) {
       const content = JSON.stringify(editor.getJSON(), null, 2);
       try {
         console.log("saving json", content);
-        await createArticle({ title, content });
-        alert("Article saved successfully!");
+        const result = await createArticle({ title, content });
+        if (result && "id" in result) {
+          router.push(`/articles/${result.id}`);
+        } else {
+          console.error("Failed to save article:", result?.error);
+          alert("Failed to save article.");
+        }
       } catch (error) {
         console.error("Failed to save article:", error);
         alert("Failed to save article.");
