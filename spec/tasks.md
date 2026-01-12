@@ -45,15 +45,15 @@ This file tracks the development tasks for the rich text editor application.
     - [x] Use the `Editor.tsx` component.
     - [x] Wire the "Save" button to the `createArticle` server action.
     - [x] On success, redirect to the new article's edit page (`/articles/[articleId]`).
+- [x] Implement the "View Article" page (`/articles/[articleId]`):
+    - [x] Build the `Viewer.tsx` component
+    - [x] Implement the logic to render TipTap's JSON content as read-only content.
+    - [x] Fetch the specific article's data on the server.
+    - [x] Display the `title` and use the `Viewer.tsx` to display the `content`.
 - [ ] Implement the "Edit Article" page (`/articles/[articleId]/edit`):
     - [ ] Fetch the specific article's data on the server.
     - [ ] Load the fetched `title` and `content` into the `Editor.tsx` component.
     - [ ] Wire the "Save" button to the `updateArticle` server action.
-- [ ] Implement the "View Article" page (`/articles/[articleId]`):
-    - [ ] Build the `Viewer.tsx` component
-    - [ ] Implement the logic to render TipTap's JSON content as read-only content.
-    - [ ] Fetch the specific article's data on the server.
-    - [ ] Display the `title` and use the `Viewer.tsx` to display the `content`.
 - [ ] Create a home page (`/`) to act as an index:
     - [ ] Fetch all articles.
     - [ ] Display a list of article titles, linking to their respective view pages.
