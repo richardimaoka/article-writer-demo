@@ -28,8 +28,8 @@ This file tracks the development tasks for the rich text editor application.
 ## Phase 3: Core UI Components
 
 - [x] Set up Shadcn/UI.
-- [ ] Install all necessary dependencies (`@tiptap/react`, `@tiptap/starter-kit`, etc.).
-- [ ] Create app/page.tsx to check the behavior of following components
+- [x] Install all necessary dependencies (`@tiptap/react`, `@tiptap/starter-kit`, etc.).
+- [x] Create app/page.tsx to check the behavior of components in development
 - [ ] Create a basic site layout component (e.g., `Header`, main content area).
 - [ ] Build the `Editor.tsx` component:
     - [ ] Integrate the TipTap editor.
