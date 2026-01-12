@@ -40,8 +40,8 @@ This file tracks the development tasks for the rich text editor application.
 
 ## Phase 4: Page Implementation and Routing
 
-- [ ] Implement the "New Article" page (`/articles/new`):
-    - [ ] Use the `Editor.tsx` component.
+- [x] Implement the "New Article" page (`/articles/new`):
+    - [x] Use the `Editor.tsx` component.
     - [ ] Wire the "Save" button to the `createArticle` server action.
     - [ ] On success, redirect to the new article's edit page (`/articles/[articleId]/edit`).
 - [ ] Implement the "Edit Article" page (`/articles/[articleId]/edit`):
