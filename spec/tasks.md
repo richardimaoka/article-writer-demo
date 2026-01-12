@@ -44,7 +44,7 @@ This file tracks the development tasks for the rich text editor application.
 - [x] Implement the "New Article" page (`/articles/new`):
     - [x] Use the `Editor.tsx` component.
     - [x] Wire the "Save" button to the `createArticle` server action.
-    - [ ] On success, redirect to the new article's edit page (`/articles/[articleId]/edit`).
+    - [x] On success, redirect to the new article's edit page (`/articles/[articleId]`).
 - [ ] Implement the "Edit Article" page (`/articles/[articleId]/edit`):
     - [ ] Fetch the specific article's data on the server.
     - [ ] Load the fetched `title` and `content` into the `Editor.tsx` component.
