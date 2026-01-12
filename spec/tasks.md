@@ -17,14 +17,9 @@ This file tracks the development tasks for the rich text editor application.
   - [x] `pnpm prisma migrate dev`
   - [x] `pnpm prisma generate`
   - [x] Seed the very first article to the DB
-- [ ] Set up Shadcn/UI.
-- [ ] Install all necessary dependencies (`@tiptap/react`, `@tiptap/starter-kit`, etc.).
-- [ ] Configure environment variables for the database connection (`.env`).
 
 ## Phase 2: Database and Backend Logic
 
-- [ ] Create the `schema.prisma` file based on the architecture.
-- [ ] Run the initial database migration to create the `Article` table in PostgreSQL.
 - [ ] Implement the server-side logic for creating a new article (`createArticle`).
 - [ ] Implement the server-side logic for updating an existing article (`updateArticle`).
 - [ ] Implement the server-side logic to query a single article by its ID.
@@ -32,6 +27,8 @@ This file tracks the development tasks for the rich text editor application.
 
 ## Phase 3: Core UI Components
 
+- [x] Set up Shadcn/UI.
+- [ ] Install all necessary dependencies (`@tiptap/react`, `@tiptap/starter-kit`, etc.).
 - [ ] Create app/page.tsx to check the behavior of following components
 - [ ] Create a basic site layout component (e.g., `Header`, main content area).
 - [ ] Build the `Editor.tsx` component:
