@@ -20,10 +20,10 @@ This file tracks the development tasks for the rich text editor application.
 
 ## Phase 2: Database and Backend Logic
 
-- [ ] Implement the server-side logic for creating a new article (`createArticle`).
-- [ ] Implement the server-side logic for updating an existing article (`updateArticle`).
-- [ ] Implement the server-side logic to query a single article by its ID.
-- [ ] Implement the server-side logic to query all articles for a list view.
+- [x] Implement the server-side logic for creating a new article (`createArticle`).
+- [x] Implement the server-side logic for updating an existing article (`updateArticle`).
+- [x] Implement the server-side logic to query a single article by its ID.
+- [x] Implement the server-side logic to query all articles for a list view.
 
 ## Phase 3: Core UI Components
 
