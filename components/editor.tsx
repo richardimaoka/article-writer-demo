@@ -2,10 +2,10 @@
 
 import { Button } from "@/components/ui/button"; // Assuming Shadcn/UI button
 import { Input } from "@/components/ui/input"; // Assuming Shadcn/UI input
+import { createArticle } from "@/lib/actions";
 import { Editor, EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
-import { createArticle } from "@/lib/actions";
 
 const Toolbar = ({ editor }: { editor: Editor }) => {
   if (!editor) {
@@ -72,13 +72,14 @@ export default function MyEditor({}: EditorProps) {
   const handleSave = async () => {
     if (editor) {
       setIsSaving(true);
-      const content = editor.getJSON();
+      const content = JSON.stringify(editor.getJSON(), null, 2);
       try {
+        console.log("saving json", content);
         await createArticle({ title, content });
-        alert('Article saved successfully!');
+        alert("Article saved successfully!");
       } catch (error) {
         console.error("Failed to save article:", error);
-        alert('Failed to save article.');
+        alert("Failed to save article.");
       } finally {
         setIsSaving(false);
       }
@@ -99,7 +100,7 @@ export default function MyEditor({}: EditorProps) {
       </div>
       <div className="flex justify-end">
         <Button onClick={handleSave} disabled={isSaving}>
-          {isSaving ? 'Saving...' : 'Save Article'}
+          {isSaving ? "Saving..." : "Save Article"}
         </Button>
       </div>
     </div>
