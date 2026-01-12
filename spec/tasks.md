@@ -31,15 +31,12 @@ This file tracks the development tasks for the rich text editor application.
 - [x] Install all necessary dependencies (`@tiptap/react`, `@tiptap/starter-kit`, etc.).
 - [x] Create app/page.tsx to check the behavior of components in development
 - [x] Create a basic site layout component (e.g., `Header`, main content area).
-- [ ] Build the `Editor.tsx` component:
+- [x] Build the `Editor.tsx` component:
     - [x] Integrate the TipTap editor.
     - [x] Add an input field for the article `title`.
     - [x] Add a basic toolbar for text formatting (e.g., bold, italic, headings).
     - [x] Add a React Server Action (`createArticle`) calling the corresponding server-side logic.
-    - [ ] Add a React Server Action (`updateArticle`) calling the corresponding server-side logic.
     - [x] Add a "Save" button.
-- [ ] Build the `Viewer.tsx` component:
-    - [ ] Implement the logic to render TipTap's JSON content as read-only content.
 
 ## Phase 4: Page Implementation and Routing
 
@@ -52,6 +49,8 @@ This file tracks the development tasks for the rich text editor application.
     - [ ] Load the fetched `title` and `content` into the `Editor.tsx` component.
     - [ ] Wire the "Save" button to the `updateArticle` server action.
 - [ ] Implement the "View Article" page (`/articles/[articleId]`):
+    - [ ] Build the `Viewer.tsx` component
+    - [ ] Implement the logic to render TipTap's JSON content as read-only content.
     - [ ] Fetch the specific article's data on the server.
     - [ ] Display the `title` and use the `Viewer.tsx` to display the `content`.
 - [ ] Create a home page (`/`) to act as an index:
