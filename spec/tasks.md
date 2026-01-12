@@ -36,13 +36,14 @@ This file tracks the development tasks for the rich text editor application.
     - [x] Add an input field for the article `title`.
     - [x] Add a basic toolbar for text formatting (e.g., bold, italic, headings).
     - [x] Add a React Server Action (`createArticle`) calling the corresponding server-side logic.
+    - [x] Add a React Server Action (`updateArticle`) calling the corresponding server-side logic.
     - [x] Add a "Save" button.
 
 ## Phase 4: Page Implementation and Routing
 
 - [x] Implement the "New Article" page (`/articles/new`):
     - [x] Use the `Editor.tsx` component.
-    - [ ] Wire the "Save" button to the `createArticle` server action.
+    - [x] Wire the "Save" button to the `createArticle` server action.
     - [ ] On success, redirect to the new article's edit page (`/articles/[articleId]/edit`).
 - [ ] Implement the "Edit Article" page (`/articles/[articleId]/edit`):
     - [ ] Fetch the specific article's data on the server.
