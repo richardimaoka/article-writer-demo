@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"; // Assuming Shadcn/UI input
 import { Editor, EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
+import { createArticle } from "@/lib/actions";
 
 const Toolbar = ({ editor }: { editor: Editor }) => {
   if (!editor) {
@@ -54,6 +55,7 @@ interface EditorProps {
 
 export default function MyEditor({}: EditorProps) {
   const [title, setTitle] = React.useState("");
+  const [isSaving, setIsSaving] = React.useState(false);
 
   const editor = useEditor({
     immediatelyRender: false,
@@ -67,13 +69,19 @@ export default function MyEditor({}: EditorProps) {
     },
   });
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (editor) {
+      setIsSaving(true);
       const content = editor.getJSON();
-      // TODO: Call the onSave prop with the title and content
-      console.log("title:", title);
-      console.log(JSON.stringify(content, null, 2));
-      alert("Article saved! (Check console for output)");
+      try {
+        await createArticle({ title, content });
+        alert('Article saved successfully!');
+      } catch (error) {
+        console.error("Failed to save article:", error);
+        alert('Failed to save article.');
+      } finally {
+        setIsSaving(false);
+      }
     }
   };
 
@@ -90,7 +98,9 @@ export default function MyEditor({}: EditorProps) {
         <EditorContent editor={editor} />
       </div>
       <div className="flex justify-end">
-        <Button onClick={handleSave}>Save Article</Button>
+        <Button onClick={handleSave} disabled={isSaving}>
+          {isSaving ? 'Saving...' : 'Save Article'}
+        </Button>
       </div>
     </div>
   );
