@@ -34,7 +34,7 @@ This file tracks the development tasks for the rich text editor application.
 - [ ] Build the `Editor.tsx` component:
     - [x] Integrate the TipTap editor.
     - [x] Add an input field for the article `title`.
-    - [ ] Add a basic toolbar for text formatting (e.g., bold, italic, headings).
+    - [x] Add a basic toolbar for text formatting (e.g., bold, italic, headings).
     - [ ] Add a React Server Action (`createArticle`) calling the corresponding server-side logic.
     - [ ] Add a React Server Action (`updateArticle`) calling the corresponding server-side logic.
     - [ ] Add a "Save" button.

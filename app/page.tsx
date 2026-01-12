@@ -1,11 +1,11 @@
 // app/page.tsx
-import Layout from '@/components/layout';
-import Editor from '@/components/editor';
+import MyEditor from "@/components/editor";
+import Layout from "@/components/layout";
 
 export default function Home() {
   return (
     <Layout>
-      <Editor />
+      <MyEditor />
     </Layout>
   );
 }

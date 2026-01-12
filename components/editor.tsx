@@ -2,28 +2,61 @@
 
 import { Button } from "@/components/ui/button"; // Assuming Shadcn/UI button
 import { Input } from "@/components/ui/input"; // Assuming Shadcn/UI input
-import { EditorContent, useEditor } from "@tiptap/react";
+import { Editor, EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
 
-const Toolbar = () => {
+const Toolbar = ({ editor }: { editor: Editor }) => {
+  if (!editor) {
+    return null;
+  }
+
   return (
-    <div className="border-b border-gray-200 p-2">
-      <p className="text-sm text-gray-500">Toolbar placeholder</p>
+    <div className="border-b border-gray-200 p-2 flex items-center space-x-2">
+      <Button
+        variant={editor.isActive("bold") ? "secondary" : "ghost"}
+        onClick={() => editor.chain().focus().toggleBold().run()}
+        disabled={!editor.can().chain().focus().toggleBold().run()}
+      >
+        Bold
+      </Button>
+      <Button
+        variant={editor.isActive("italic") ? "secondary" : "ghost"}
+        onClick={() => editor.chain().focus().toggleItalic().run()}
+        disabled={!editor.can().chain().focus().toggleItalic().run()}
+      >
+        Italic
+      </Button>
+      <Button
+        variant={
+          editor.isActive("heading", { level: 2 }) ? "secondary" : "ghost"
+        }
+        onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+      >
+        H2
+      </Button>
+      <Button
+        variant={
+          editor.isActive("heading", { level: 3 }) ? "secondary" : "ghost"
+        }
+        onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+      >
+        H3
+      </Button>
     </div>
   );
 };
-
 // TODO: Define the props for the editor, e.g., initial content and onSave function
 interface EditorProps {
   initialContent?: string;
   // onSave: (data: { title: string; content: any }) => void;
 }
 
-export default function Editor({}: EditorProps) {
+export default function MyEditor({}: EditorProps) {
   const [title, setTitle] = React.useState("");
 
   const editor = useEditor({
+    immediatelyRender: false,
     extensions: [StarterKit],
     content: "<p>Start writing your article...</p>",
     editorProps: {
@@ -52,7 +85,7 @@ export default function Editor({}: EditorProps) {
         className="text-2xl font-bold"
       />
       <div className="border rounded-md">
-        <Toolbar />
+        {editor ? <Toolbar editor={editor} /> : <></>}
         <EditorContent editor={editor} />
       </div>
       <div className="flex justify-end">
